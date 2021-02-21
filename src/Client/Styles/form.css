@@ -1,0 +1,15 @@
+h1 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 3em;
+    margin: 1em 1rem;
+    color:lightyellow;
+}
+
+@media (min-width: 601px) and (max-width: 1250px){
+
+}
+
+@media(max-width: 600px) { 
+
+
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>TravelApp</title>
+        <link href="/src/Client/Styles/base.css" rel="stylesheet">
+        <link href="/src/Client/Styles/footer.css" rel="stylesheet">
+        <link href="/src/Client/Styles/header.css" rel="stylesheet">
+        <link href="/src/Client/Styles/form.css" rel="stylesheet">
+        <link href="/src/Client/Styles/resets.css" rel="stylesheet">
+    </head>
+    <body>
+        <header class="page__header">
+            <nav class="navbar__menu">
+                <h3 class="site-name">TravelApp</h3>
+                <ul id="navbar__list">
+                    <li><a id="Home" class="menu__link">Home</a></li>
+                    <li><a id="About" class="menu__link">About</a></li>
+                    <li><a id="Contact Us" class="menu__link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id = "app">
+            <h1>Travel Planner</h1>
+            <section class ="holder zip">
+                <label for="zip">Enter Zipcode here</label>
+                <input type="text" id="zip" placeholder="enter zip code here">
+            </section>
+            <section class ="holder feel">
+                <label for="feelings">How are you feeling today?</label>
+                <input class= "myInput" id="feelings" placeholder="Enter your feelings here">
+                <button id="generate" type = "submit"> Generate </button>
+            </section>
+            <section class ="holder entry">
+                <div class = "title">Most Recent Entry</div>
+                <div id = "entryHolder">
+                    <div id = "date"></div> 
+                    <div id = "temp"></div>
+                    <div id = "content"></div>
+                </div>
+            </section>
+        </div>
+        <footer class="page__footer">
+            <p id="footpara">TravelApp @Copyright 2020/2021</p>
+        </footer>
+    </body>
+</html>

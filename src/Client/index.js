@@ -1,0 +1,5 @@
+import './Styles/base.css'
+import './Styles/footer.css'
+import './Styles/form.css'
+import './Styles/header.css'
+import './Styles/resets.css'
