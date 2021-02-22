@@ -9,7 +9,7 @@ p {
     text-align: center;
     height: 130px;  
     padding-top: 45px;  
-    background-color:darkcyan;
+    background-color:black;
 }
 
 #footpara{
@@ -18,7 +18,6 @@ p {
     color:burlywood;
     width: 100%;
     background-color: transparent;
-    
 }
 
 @media (min-width: 601px) and (max-width: 1250px){
@@ -29,20 +28,17 @@ p {
         background-color: white;
     }
 
-    .page__footer {
+    .page__footer{
         text-align: center;
         height: 110px;  
-        padding-top: 35px;  
-        background-color:darkcyan;
+        padding-top: 40px;  
     }
     
     #footpara{
-        font-size: 20px;
+        font-size: 1.4em;
         font-family: Georgia, 'Times New Roman', Times, serif;
         color:burlywood;
         width: 100%;
-        background-color: transparent;
-        
     }
 }
 
@@ -51,7 +47,6 @@ p {
         line-height: 1.2em;
         color: green;
         width: 95%;
-        background-color: white;
         font-size: 15px;
     }
 
@@ -59,7 +54,7 @@ p {
         text-align: center;
         height: 80px;  
         padding-top: 40px;  
-        background-color:darkcyan;
+        margin-top: 500px;
     }
     
     #footpara{
@@ -67,8 +62,7 @@ p {
         font-family: Georgia, 'Times New Roman', Times, serif;
         color:burlywood;
         width: 100%;
-        background-color: transparent;
-        
+        background-color: transparent; 
     }
 
 }

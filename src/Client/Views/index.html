@@ -3,11 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <title>TravelApp</title>
-        <link href="/src/Client/Styles/base.css" rel="stylesheet">
-        <link href="/src/Client/Styles/footer.css" rel="stylesheet">
-        <link href="/src/Client/Styles/header.css" rel="stylesheet">
-        <link href="/src/Client/Styles/form.css" rel="stylesheet">
-        <link href="/src/Client/Styles/resets.css" rel="stylesheet">
+        <link href="../Styles/base.css" rel="stylesheet">
+        <link href="../Styles/footer.css" rel="stylesheet">
+        <link href="../Styles/header.css" rel="stylesheet">
+        <link href="../Styles/form.css" rel="stylesheet">
+        <link href="../Styles/resets.css" rel="stylesheet">
+        
     </head>
     <body>
         <header class="page__header">
@@ -20,26 +21,29 @@
                 </ul>
             </nav>
         </header>
-        <div id = "app">
+        <div id="TravelHeader">
             <h1>Travel Planner</h1>
-            <section class ="holder zip">
-                <label for="zip">Enter Zipcode here</label>
-                <input type="text" id="zip" placeholder="enter zip code here">
+        </div>
+        <div id = "app">
+            <section class ="holderCountry">
+                <label for="country">Your Next Travel To</label>
+                <input type="text" id="TravelCountry" placeholder="Country">
             </section>
-            <section class ="holder feel">
-                <label for="feelings">How are you feeling today?</label>
-                <input class= "myInput" id="feelings" placeholder="Enter your feelings here">
-                <button id="generate" type = "submit"> Generate </button>
-            </section>
-            <section class ="holder entry">
-                <div class = "title">Most Recent Entry</div>
-                <div id = "entryHolder">
-                    <div id = "date"></div> 
-                    <div id = "temp"></div>
-                    <div id = "content"></div>
-                </div>
+            <section class ="holderDate">
+                <label for="date">Travel Date</label>
+                <input class= "myInput" id="TravelDate" placeholder="Day/Month/Year">
             </section>
         </div>
+        <div id="btnbox">
+            <button id="generate" type = "submit"> Generate </button>
+        </div>
+        <section class ="holderEntry">
+            <div id = "entryHolder">
+                <div id = "date"></div> 
+                <div id = "temp"></div>
+                <div id = "content"></div>
+            </div>
+        </section>
         <footer class="page__footer">
             <p id="footpara">TravelApp @Copyright 2020/2021</p>
         </footer>

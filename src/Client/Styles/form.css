@@ -1,15 +1,180 @@
-h1 {
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 3em;
-    margin: 1em 1rem;
-    color:lightyellow;
+#app{
+    display: flex;
+    justify-content: center;
+    grid-gap: 1em;
+    font-size: 1.5em;
+    font-family: 'Oswald', sans-serif;
+    margin-top: 100px;
+}
+
+.TravelCountry {
+    margin-top: 60px;
+    color:rgb(241, 169, 143);
+}
+
+
+label{
+    display:block;
+    font-size: 25px;
+    color: coral;
+}
+
+input{
+    display:block;
+    height: 40px;
+    width: 300px;
+    background:#22b2da;
+    font-size: 0.8em;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+#btnbox {
+    text-align: center;
+}
+#btnbox button{
+    width: 120px;
+    height: 40px;
+    background:orangered;
+    font-size: 1.3em;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    margin-bottom: 50px;
+    border-radius: 15px;
+}
+
+section.holderEntry {
+    margin: auto;
+    background-color:brown;
+    height: 30vh;
+    width: 600px;
+    opacity: 0.9;
+    color:white;
+    margin-bottom: 70px;
+    font-size: 1.7em;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 @media (min-width: 601px) and (max-width: 1250px){
-
+    #app{
+        display: flex;
+        justify-content: center;
+        grid-gap: 0.8em;
+        font-size: 1.2em;
+        font-family: 'Oswald', sans-serif;
+        margin-top: 80px;
+    }
+    
+    .TravelCountry {
+        margin-top: 50px;
+        color:rgb(241, 169, 143);
+    }
+    
+    
+    label{
+        display:block;
+        font-size: 20px;
+        color: coral;
+    }
+    
+    input{
+        display:block;
+        height: 30px;
+        width: 240px;
+        background:#22b2da;
+        font-size: 0.6em;
+        font-family: 'Oswald', sans-serif;
+        border: none;
+        margin-top: 3px;
+        margin-bottom: 20px;
+    }
+    #btnbox {
+        text-align: center;
+    }
+    #btnbox button{
+        width: 90px;
+        height: 30px;
+        background:orangered;
+        font-size: 1em;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        border: none;
+        margin-bottom: 40px;
+        border-radius: 15px;
+    }
+    
+    section.holderEntry {
+        margin: auto;
+        background-color:brown;
+        height: 24vh;
+        width: 450px;
+        opacity: 0.9;
+        color:white;
+        margin-bottom: 50px;
+        font-size: 1.5em;
+        padding-top: 7px;
+        padding-left: 7px;
+    }
 }
 
 @media(max-width: 600px) { 
-
+    #app{
+        display: flex;
+        justify-content: center;
+        grid-gap: 0.6em;
+        font-size: 0.9em;
+        font-family: 'Oswald', sans-serif;
+        margin-top: 60px;
+    }
+    
+    .TravelCountry {
+        margin-top: 40px;
+        color:rgb(241, 169, 143);
+    }
+    
+    
+    label{
+        display:block;
+        font-size: 15px;
+        color: coral;
+    }
+    
+    input{
+        display:block;
+        height: 25px;
+        width: 190px;
+        background:#22b2da;
+        font-size: 0.5em;
+        font-family: 'Oswald', sans-serif;
+        border: none;
+        margin-top: 2px;
+        margin-bottom: 14px;
+    }
+    #btnbox {
+        text-align: center;
+    }
+    #btnbox button{
+        width: 70px;
+        height: 20px;
+        background:orangered;
+        font-size: 0.9em;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        border: none;
+        margin-bottom: 25px;
+        border-radius: 15px;
+    }
+    
+    section.holderEntry {
+        margin: auto;
+        background-color:brown;
+        height: 20vh;
+        width: 300px;
+        opacity: 0.9;
+        color:white;
+        font-size: 1.2em;
+        padding-top: 5px;
+        padding-left: 5px;
+    }
 
 }
