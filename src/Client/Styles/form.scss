@@ -1,39 +1,36 @@
-#app{
+$font-fam2: 'Oswald', sans-serif;
+div#app{
     display: flex;
     justify-content: center;
     grid-gap: 1em;
     font-size: 1.5em;
-    font-family: 'Oswald', sans-serif;
+    font-family: $font-fam2;
     margin-top: 100px;
 }
 
-.TravelCountry {
-    margin-top: 60px;
-    color:rgb(241, 169, 143);
+section{
+    label{
+        display:block;
+        font-size: 25px;
+        color: coral;
+    }
+    input{
+        display:block;
+        height: 40px;
+        width: 300px;
+        background:#22b2da;
+        font-size: 0.8em;
+        font-family: $font-fam2;
+        border: none;
+        margin-top: 5px;
+        margin-bottom: 30px;
+    }
 }
 
-
-label{
-    display:block;
-    font-size: 25px;
-    color: coral;
-}
-
-input{
-    display:block;
-    height: 40px;
-    width: 300px;
-    background:#22b2da;
-    font-size: 0.8em;
-    font-family: 'Oswald', sans-serif;
-    border: none;
-    margin-top: 5px;
-    margin-bottom: 30px;
-}
-#btnbox {
+div#btnbox {
     text-align: center;
 }
-#btnbox button{
+button#generate{
     width: 120px;
     height: 40px;
     background:orangered;
@@ -58,47 +55,40 @@ section.holderEntry {
 }
 
 @media (min-width: 601px) and (max-width: 1250px){
-    #app{
+    div#app{
         display: flex;
         justify-content: center;
         grid-gap: 0.8em;
         font-size: 1.2em;
-        font-family: 'Oswald', sans-serif;
         margin-top: 80px;
     }
     
-    .TravelCountry {
-        margin-top: 50px;
-        color:rgb(241, 169, 143);
+    section{
+        label{
+            display:block;
+            font-size: 20px;
+            color: coral;
+        }
+        input{
+            display:block;
+            height: 30px;
+            width: 240px;
+            background:#22b2da;
+            font-size: 0.6em;
+            border: none;
+            margin-top: 3px;
+            margin-bottom: 20px;
+        }
     }
     
-    
-    label{
-        display:block;
-        font-size: 20px;
-        color: coral;
-    }
-    
-    input{
-        display:block;
-        height: 30px;
-        width: 240px;
-        background:#22b2da;
-        font-size: 0.6em;
-        font-family: 'Oswald', sans-serif;
-        border: none;
-        margin-top: 3px;
-        margin-bottom: 20px;
-    }
-    #btnbox {
+    div#btnbox {
         text-align: center;
     }
-    #btnbox button{
+    button#generate{
         width: 90px;
         height: 30px;
         background:orangered;
         font-size: 1em;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         border: none;
         margin-bottom: 40px;
         border-radius: 15px;
@@ -119,47 +109,42 @@ section.holderEntry {
 }
 
 @media(max-width: 600px) { 
-    #app{
+    div#app{
         display: flex;
         justify-content: center;
         grid-gap: 0.6em;
         font-size: 0.9em;
-        font-family: 'Oswald', sans-serif;
         margin-top: 60px;
     }
     
-    .TravelCountry {
-        margin-top: 40px;
-        color:rgb(241, 169, 143);
+    section{
+        label{
+            display:block;
+            font-size: 15px;
+            color: coral;
+        }
+        
+        input{
+            display:block;
+            height: 25px;
+            width: 190px;
+            background:#22b2da;
+            font-size: 0.5em;
+            border: none;
+            margin-top: 2px;
+            margin-bottom: 14px;
+        }
     }
     
-    
-    label{
-        display:block;
-        font-size: 15px;
-        color: coral;
-    }
-    
-    input{
-        display:block;
-        height: 25px;
-        width: 190px;
-        background:#22b2da;
-        font-size: 0.5em;
-        font-family: 'Oswald', sans-serif;
-        border: none;
-        margin-top: 2px;
-        margin-bottom: 14px;
-    }
-    #btnbox {
+    div#btnbox {
         text-align: center;
     }
-    #btnbox button{
+    
+    button#generate{
         width: 70px;
         height: 20px;
         background:orangered;
         font-size: 0.9em;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         border: none;
         margin-bottom: 25px;
         border-radius: 15px;
