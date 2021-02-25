@@ -1,14 +1,21 @@
 {
+  "name": "travel-app",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
     "start": "node src/Server/server.js",
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack serve --config webpack.dev.js --open"
   },
+  "author": "Abanoub Hendy",
+  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "expand-tilde": "^2.0.2",
     "express": "^4.17.1",
+    "file-loader": "^6.2.0",
     "yargs-config": "^1.1.2"
   },
   "devDependencies": {

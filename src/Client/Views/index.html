@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>TravelApp</title>
+        <link rel="stylesheet" href="../Styles/form.css">
     </head>
     <body>
         <header class="page__header">
@@ -25,19 +26,29 @@
             </section>
             <section class ="holderDate">
                 <label for="date">Travel Date</label>
-                <input class= "myInput" id="TravelDate" placeholder="Day/Month/Year">
+                <input type="date" class= "myInput" id="TravelDate" >
             </section>
         </div>
         <div id="btnbox">
             <button id="generate" type = "submit"> Generate </button>
         </div>
-        <section class ="holderEntry">
-            <div id = "entryHolder">
+        <div class ="holderEntry">
+            <section id="FirstPart">
+                <img id="CountryImg" src="">
+            </section>
+            <section id = "SecondPart">
                 <div id = "latitude"></div> 
                 <div id = "longitude"></div>
                 <div id = "country"></div>
-            </div>
-        </section>
+                <div id="theDate"></div>
+                <img id="weatherImg" src="../images/istockphoto-1212755900-170667a.jpg">
+                <div class = "weathertitle">The Weather Will Be:</div>
+                <div id="HighTemp"></div>
+                <div id="LowTemp"></div>
+                <button id="SaveTrip">Save Trip</button>
+                <button id="RemoveTrip">Remove Trip</button>
+            </section>
+        </div>
         <footer>
             <p id="footpara">TravelApp @Copyright 2020/2021</p>
         </footer>

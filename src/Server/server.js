@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const bodyParser = require('body-parser')
 const express = require('express')
 const cors = require('cors');
@@ -17,3 +19,12 @@ function listening() {
     console.log(`the server running on: ${port}`);
 };
 
+app.get('/getData' , function(req , res){
+    res.send(projectData);
+})
+
+app.post('/data' , function(req , res){
+    EntryData={
+        
+    }
+})
