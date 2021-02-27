@@ -1,5 +1,4 @@
 $font-fam2: 'Oswald', sans-serif;
-$Second-Sizing: 14px; 
 div#app{
     display: flex;
     justify-content: center;
@@ -52,77 +51,76 @@ div.holderEntry {
     font-size: 1.7em;
     padding-top: 10px;
     padding-left: 10px;
-}
-section#FirstPart{
-    width: 40%;
-    float: left;
+    section#FirstPart{
+        width: 40%;
+        float: left;
+    }
+    section#SecondPart{
+        display: grid;
+        grid-template-columns: repeat(4 , 1fr);
+        grid-gap: 4px;
+        font-size: 0.7em;
+        grid-template-areas: "tr tr tr tr"
+        "as as as as"
+        "er er er er"
+        "rt rt rt rt"
+        "zx cv cv cv"
+        "bn bn nm nm"
+        "jk jk kl kl"
+    }
+    div#latitude{
+        grid-area: tr;
+        font-size: 14px;
+    }
+    div#longitude{
+        grid-area: as;
+        font-size: 14px;
+    }
+    div#country{
+        grid-area: er;
+    }
+    div#theDate{
+        grid-area: rt;
+    }
+    img#weatherImg{
+        grid-area: zx;
+        width: 60px;
+        height: 60px;
+        margin: auto;
+        border-radius: 50px;
+    }
+    div.weathertitle{
+        margin-top: 20px;
+        grid-area: cv;
+    }
+    div#HighTemp{
+        grid-area: bn;
+        font-size: 14px;
+    }
+    div#LowTemp{
+        grid-area: nm;
+        font-size: 14px;
+    }
+    button#SaveTrip{
+        grid-area: jk;
+        height: 30px;
+        width: 60%;
+        background-color: orangered;
+        border: none;
+        border-radius: 20px;
+        margin: 20px;
+    }
+    button#RemoveTrip{
+        grid-area: kl;
+        height: 30px;
+        width: 60%;
+        background-color: orangered;
+        border: none;
+        border-radius: 20px;
+        margin: 20px;
+    }
 }
 
-section#SecondPart{
-    display: grid;
-    grid-template-columns: repeat(4 , 1fr);
-    grid-gap: 4px;
-    font-size: 0.7em;
-    grid-template-areas: "tr tr tr tr"
-    "as as as as"
-    "er er er er"
-    "rt rt rt rt"
-    "zx cv cv cv"
-    "bn bn nm nm"
-    "jk jk kl kl"
-}
-
-div#latitude{
-    grid-area: tr;
-    font-size: 14px;
-}
-div#longitude{
-    grid-area: as;
-    font-size: 14px;
-}
-div#country{
-    grid-area: er;
-}
-div#theDate{
-    grid-area: rt;
-}
-img#weatherImg{
-    grid-area: zx;
-    width: 60px;
-    height: 60px;
-    margin: auto;
-    border-radius: 50px;
-}
-div.weathertitle{
-    margin-top: 20px;
-    grid-area: cv;
-}
-div#HighTemp{
-    grid-area: bn;
-    font-size: 14px;
-}
-div#LowTemp{
-    grid-area: nm;
-    font-size: 14px;
-}
-button#SaveTrip{
-    grid-area: jk;
-    height: 30px;
-    width: 60%;
-    background-color: orangered;
-    border: none;
-    border-radius: 20px;
-    margin: 20px;
-}
-button#RemoveTrip{
-    grid-area: kl;
-    height: 30px;
-    width: 60%;
-    background-color: orangered;
-    border: none;
-    border-radius: 20px;
-    margin: 20px;
-}
 
 @media (min-width: 601px) and (max-width: 1250px){
     div#app{
@@ -132,7 +130,6 @@ button#RemoveTrip{
         font-size: 1.2em;
         margin-top: 80px;
     }
-    
     section{
         label{
             display:block;
@@ -150,7 +147,6 @@ button#RemoveTrip{
             margin-bottom: 20px;
         }
     }
-
     div#btnbox {
         text-align: center;
     }
@@ -175,60 +171,61 @@ button#RemoveTrip{
         font-size: 1.5em;
         padding-top: 7px;
         padding-left: 7px;
+        div#latitude{
+            grid-area: tr;
+            font-size: 12px;
+        }
+        div#longitude{
+            grid-area: as;
+            font-size: 12px;
+        }
+        div#country{
+            grid-area: er;
+        }
+        div#theDate{
+            grid-area: rt;
+        }
+        img#weatherImg{
+            grid-area: zx;
+            width: 45px;
+            height: 45px;
+            margin: auto;
+            border-radius: 50px;
+        }
+        div.weathertitle{
+            margin-top: 16px;
+            grid-area: cv;
+        }
+        div#HighTemp{
+            grid-area: bn;
+            font-size: 12px;
+        }
+        div#LowTemp{
+            grid-area: nm;
+            font-size: 12px;
+        }
+        button#SaveTrip{
+            grid-area: jk;
+            height: 25px;
+            width: 70%;
+            background-color: orangered;
+            border: none;
+            border-radius: 20px;
+            margin: 15px;
+            font-size: 0.8em;
+        }
+        button#RemoveTrip{
+            grid-area: kl;
+            height: 25px;
+            width: 70%;
+            background-color: orangered;
+            border: none;
+            border-radius: 20px;
+            margin: 15px;
+            font-size: 0.8em;
+        }
     }
-    div#latitude{
-        grid-area: tr;
-        font-size: 12px;
-    }
-    div#longitude{
-        grid-area: as;
-        font-size: 12px;
-    }
-    div#country{
-        grid-area: er;
-    }
-    div#theDate{
-        grid-area: rt;
-    }
-    img#weatherImg{
-        grid-area: zx;
-        width: 45px;
-        height: 45px;
-        margin: auto;
-        border-radius: 50px;
-    }
-    div.weathertitle{
-        margin-top: 16px;
-        grid-area: cv;
-    }
-    div#HighTemp{
-        grid-area: bn;
-        font-size: 12px;
-    }
-    div#LowTemp{
-        grid-area: nm;
-        font-size: 12px;
-    }
-    button#SaveTrip{
-        grid-area: jk;
-        height: 25px;
-        width: 70%;
-        background-color: orangered;
-        border: none;
-        border-radius: 20px;
-        margin: 15px;
-        font-size: 0.8em;
-    }
-    button#RemoveTrip{
-        grid-area: kl;
-        height: 25px;
-        width: 70%;
-        background-color: orangered;
-        border: none;
-        border-radius: 20px;
-        margin: 15px;
-        font-size: 0.8em;
-    }
+    
 }
 
 
@@ -284,59 +281,58 @@ button#RemoveTrip{
         padding-top: 5px;
         padding-left: 5px;
         margin-bottom: 100px;
+        div#latitude{
+            grid-area: tr;
+            font-size: 9px;
+        }
+        div#longitude{
+            grid-area: as;
+            font-size: 9px;
+        }
+        div#country{
+            grid-area: er;
+        }
+        div#theDate{
+            grid-area: rt;
+        }
+        img#weatherImg{
+            grid-area: zx;
+            width: 35px;
+            height: 35px;
+            margin: auto;
+            border-radius: 50px;
+        }
+        div.weathertitle{
+            margin-top: 10px;
+            grid-area: cv;
+        }
+        div#HighTemp{
+            grid-area: bn;
+            font-size: 9px;
+        }
+        div#LowTemp{
+            grid-area: nm;
+            font-size: 9px;
+        }
+        button#SaveTrip{
+            grid-area: jk;
+            height: 20px;
+            width: 80%;
+            background-color: orangered;
+            border: none;
+            border-radius: 20px;
+            margin: 10px;
+            font-size: 0.7em;
+        }
+        button#RemoveTrip{
+            grid-area: kl;
+            height: 20px;
+            width: 80%;
+            background-color: orangered;
+            border: none;
+            border-radius: 20px;
+            margin: 10px;
+            font-size: 0.7em;
+        }
     }
-    div#latitude{
-        grid-area: tr;
-        font-size: 9px;
-    }
-    div#longitude{
-        grid-area: as;
-        font-size: 9px;
-    }
-    div#country{
-        grid-area: er;
-    }
-    div#theDate{
-        grid-area: rt;
-    }
-    img#weatherImg{
-        grid-area: zx;
-        width: 35px;
-        height: 35px;
-        margin: auto;
-        border-radius: 50px;
-    }
-    div.weathertitle{
-        margin-top: 10px;
-        grid-area: cv;
-    }
-    div#HighTemp{
-        grid-area: bn;
-        font-size: 9px;
-    }
-    div#LowTemp{
-        grid-area: nm;
-        font-size: 9px;
-    }
-    button#SaveTrip{
-        grid-area: jk;
-        height: 20px;
-        width: 80%;
-        background-color: orangered;
-        border: none;
-        border-radius: 20px;
-        margin: 10px;
-        font-size: 0.7em;
-    }
-    button#RemoveTrip{
-        grid-area: kl;
-        height: 20px;
-        width: 80%;
-        background-color: orangered;
-        border: none;
-        border-radius: 20px;
-        margin: 10px;
-        font-size: 0.7em;
-    }
-
 }

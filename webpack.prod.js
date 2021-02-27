@@ -1,7 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
     entry: './src/Client/index.js',
@@ -15,8 +16,9 @@ module.exports = {
             },
             {
                 test: /\.(sa|sc|c)ss$/,
-                use: ['style-loader' , 'css-loader' , 'sass-loader']
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
             },
+            
             {
                 test: /\.(png|jpe?g|gif)$/i,
                 use: [
@@ -35,6 +37,16 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/Client/Views/index.html",
             filename: "./index.html",
+        }),
+        new MiniCssExtractPlugin({ filename: "[name].css" }),
+        new ExtractTextPlugin('styles.css'),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.optimize\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorPluginOptions: {
+            preset: ['default', { discardComments: { removeAll: true } }],
+            },
+            canPrint: true
         })
     ]
 }
