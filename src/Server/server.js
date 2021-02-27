@@ -23,8 +23,11 @@ app.get('/getData' , function(req , res){
     res.send(projectData);
 })
 
-app.post('/data' , function(req , res){
+app.post('/AddData' , function(req , res){
     EntryData={
-        
+        lat: req.body.lat,
+        lon: req.body.lon,
+        country: req.body.country
     }
+    projectData=EntryData;
 })

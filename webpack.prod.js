@@ -7,6 +7,10 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 module.exports = {
     entry: './src/Client/index.js',
     mode: 'production',
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
     module: {
         rules: [
             {
@@ -16,9 +20,8 @@ module.exports = {
             },
             {
                 test: /\.(sa|sc|c)ss$/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+                use: ["style-loader", "css-loader", "sass-loader"],           
             },
-            
             {
                 test: /\.(png|jpe?g|gif)$/i,
                 use: [
@@ -39,7 +42,6 @@ module.exports = {
             filename: "./index.html",
         }),
         new MiniCssExtractPlugin({ filename: "[name].css" }),
-        new ExtractTextPlugin('styles.css'),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.optimize\.css$/g,
             cssProcessor: require('cssnano'),

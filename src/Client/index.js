@@ -1,3 +1,5 @@
+import { GenerateData } from './js/app'
+
 import './Styles/base.scss'
 import './Styles/footer.scss'
 import './Styles/form.scss'
@@ -9,3 +11,7 @@ import img from './images/istockphoto-1212755900-170667a.jpg'
 
 
 alert('I exist')
+
+export{
+    GenerateData
+}
