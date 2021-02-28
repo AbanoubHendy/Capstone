@@ -36,18 +36,18 @@ app.get('/getData' , function(req , res){
 // })
 
 app.post('/add', async function(req, res) {
-    const BaseUrl ='http://api.geonames.org/findNearbyPostalCodes?';
+    const geo_BaseUrl ='http://api.geonames.org/searchJSON?';
     console.log('req.body -------> ', req.body)
-    const {userInput} = req.body;
+    const {countryInput} = req.body;
     //URL meaning cloud API
-    const URL = `${BaseUrl}key=${ApiKey1}&txt=${userInput}&lang=en`;
+    const URL = `${geo_BaseUrl}q=${countryInput}&maxRows=10&username=${ApiKey1}`;
     const response = await fetch(URL)
     try{
     const data = await response.json()
     projectData = {
         lat:data.lat,
-        lon:data.lon,
-        country:data.country
+        lon:data.lng,
+        country:data.city
        }
     console.log('data ===> ', data)
     res.send(data)

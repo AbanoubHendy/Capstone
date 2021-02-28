@@ -4,8 +4,9 @@ GenerateBtn.addEventListener('click' , GenerateData);
 
  async function GenerateData(event) {
     event.preventDefault()
-    const userInput = document.getElementById('TravelCountry').value;
-    const res = await PostData('http://localhost:7000/add' , { userInput })
+    const countryInput = document.getElementById('TravelCountry').value;
+    console.log(countryInput);
+    const res = await PostData('http://localhost:7000/add' , {countryInput})
     UpdataUI(res);
 }
 
@@ -31,8 +32,8 @@ const PostData = async (url = 'http://localhost:7000/add' , data = {})=> {
 const UpdataUI = async res => {
     try{
         document.getElementById('latitude').innerHTML=`Lat: ${res.lat}`;
-        document.getElementById('longitude').innerHTML=`Lon: ${res.lon}`;
-        document.getElementById('country').innerHTML=`Country: ${res.country}`;
+        document.getElementById('longitude').innerHTML=`Lon: ${res.lng}`;
+        document.getElementById('country').innerHTML=`Country: ${res.city}`;
     }catch(error) {
         console.log("There Is An Error" , error)
     }
