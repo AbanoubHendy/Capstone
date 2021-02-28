@@ -1,30 +1,17 @@
 const BaseUrl = "http://api.geonames.org/findNearbyPostalCodes?";
-const ApiKey1 = process.env.API_KeyGeo;
 const GenerateBtn = document.getElementById('generate');
 GenerateBtn.addEventListener('click' , GenerateData);
 
-function GenerateData() {
-    const country = document.getElementById('TravelCountry').value;
-    CountryPart(BaseUrl , ApiKey1 , country)
-    .then(function(data) {
-        console.log(data);
-        PostData('http://localhost:7000/AddData' , {lat:data.main.lat , lon:data.main.lon , country:country})
-        UpdataUI();
-    });
-}
-const CountryPart= async(BaseUrl , ApiKey1 , country) => {
-    const response = await fetch(BaseUrl+ApiKey1+country)
-    try{
-        const data= await response.json();
-        return data;
-    }catch(error) {
-        console.log("There Is An Error" , error)
-    }
+ async function GenerateData(event) {
+    event.preventDefault()
+    const userInput = document.getElementById('TravelCountry').value;
+    const res = await PostData('http://localhost:7000/add' , { userInput })
+    UpdataUI(res);
 }
 
-const PostData = async (url = 'http://localhost:7000/AddData' , data = {})=> {
+const PostData = async (url = 'http://localhost:7000/add' , data = {})=> {
     console.log(data);
-    const response = await fetch('http://localhost:7000/AddData', {
+    const res = await fetch (url , {
         method: 'POST',
         credentials: 'same-origin' ,
         headers: {
@@ -33,7 +20,7 @@ const PostData = async (url = 'http://localhost:7000/AddData' , data = {})=> {
         body: JSON.stringify(data),
     });
     try{
-        const NewData = await response.json();
+        const NewData = await res.json();
         console.log(NewData);
         return NewData;
     }catch(error) {
@@ -41,13 +28,11 @@ const PostData = async (url = 'http://localhost:7000/AddData' , data = {})=> {
     }
 }
 
-const UpdataUI = async () => {
-    const request = await fetch('/getData');
+const UpdataUI = async res => {
     try{
-        const UpdataData = await request.json();
-        document.getElementById('latitude').innerHTML=`Lat: ${UpdataData.lat}`;
-        document.getElementById('longitude').innerHTML=`Lon: ${UpdataData.lon}`;
-        document.getElementById('country').innerHTML=`Country: ${UpdataData.country}`;
+        document.getElementById('latitude').innerHTML=`Lat: ${res.lat}`;
+        document.getElementById('longitude').innerHTML=`Lon: ${res.lon}`;
+        document.getElementById('country').innerHTML=`Country: ${res.country}`;
     }catch(error) {
         console.log("There Is An Error" , error)
     }
