@@ -1,4 +1,5 @@
 import { GenerateData } from './js/app'
+import { CountDown } from './js/CountDown'
 
 import './Styles/base.scss'
 import './Styles/footer.scss'
@@ -13,5 +14,6 @@ import img from './images/istockphoto-1212755900-170667a.jpg'
 alert('I exist')
 
 export{
+    CountDown,
     GenerateData
 }

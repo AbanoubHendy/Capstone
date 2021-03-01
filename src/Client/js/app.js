@@ -1,17 +1,20 @@
-const BaseUrl = "http://api.geonames.org/findNearbyPostalCodes?";
 const GenerateBtn = document.getElementById('generate');
 GenerateBtn.addEventListener('click' , GenerateData);
 
- async function GenerateData(event) {
+async function GenerateData(event) {
     event.preventDefault()
+    const DateOfTravel = document.getElementById('TravelDate').value;
     const countryInput = document.getElementById('TravelCountry').value;
     console.log(countryInput);
-    const res = await PostData('http://localhost:7000/add' , {countryInput})
-    UpdataUI(res);
+    Client.CountDown(DateOfTravel)
+    const res = await PostData('http://localhost:7000/Geoadd' , {countryInput})
+    .then(data=>{ UpdataUI(data);})
 }
 
-const PostData = async (url = 'http://localhost:7000/add' , data = {})=> {
-    console.log(data);
+
+
+const PostData = async (url = 'http://localhost:7000/Geoadd' , data = {})=> {
+    console.log('data => ', {url, data })
     const res = await fetch (url , {
         method: 'POST',
         credentials: 'same-origin' ,
@@ -33,7 +36,7 @@ const UpdataUI = async res => {
     try{
         document.getElementById('latitude').innerHTML=`Lat: ${res.lat}`;
         document.getElementById('longitude').innerHTML=`Lon: ${res.lng}`;
-        document.getElementById('country').innerHTML=`Country: ${res.city}`;
+        document.getElementById('country').innerHTML=`Country: ${res.countryName}`;
     }catch(error) {
         console.log("There Is An Error" , error)
     }

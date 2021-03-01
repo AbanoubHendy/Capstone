@@ -54,6 +54,10 @@ div.holderEntry {
     section#FirstPart{
         width: 40%;
         float: left;
+        #countDown{
+            font-size: 0.6em;
+            color:peru;
+        }
     }
     section#SecondPart{
         display: grid;
@@ -170,6 +174,9 @@ div.holderEntry {
         font-size: 1.5em;
         padding-top: 7px;
         padding-left: 7px;
+        div#countDown{
+            font-size: 0.5em;
+        }
         div#latitude{
             grid-area: tr;
             font-size: 12px;
@@ -279,6 +286,9 @@ div.holderEntry {
         font-size: 1.2em;
         padding-top: 5px;
         padding-left: 5px;
+        div#countDown{
+            font-size: 0.4em;
+        }
         div#latitude{
             grid-area: tr;
             font-size: 9px;
