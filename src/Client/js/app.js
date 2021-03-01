@@ -4,9 +4,9 @@ GenerateBtn.addEventListener('click' , GenerateData);
 async function GenerateData(event) {
     event.preventDefault()
     const DateOfTravel = document.getElementById('TravelDate').value;
+    Client.CountDown(DateOfTravel)
     const countryInput = document.getElementById('TravelCountry').value;
     console.log(countryInput);
-    Client.CountDown(DateOfTravel)
     const res = await PostData('http://localhost:7000/Geoadd' , {countryInput})
     .then(data=>{ UpdataUI(data);})
 }

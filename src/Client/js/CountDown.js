@@ -5,7 +5,7 @@ function CountDown(DateOfTravel) {
     const TimeLeft = DateTravel - NowDate;
     const Days = Math.floor(TimeLeft / (1000 * 60 * 60 * 24))+1;
     console.log(Days);
-    document.getElementById('countDown').innerHTML= `Your Travel to ${NameOfCountry} Is After ${Days} Days`;
+    document.getElementById('countDown').innerHTML= `Your Travel To ${NameOfCountry} Is After ${Days} Days`;
     if(TimeLeft < 0) {
         alert("Please Enter Your Travel Date Correct")
         document.getElementById('countDown').innerHTML= ""
