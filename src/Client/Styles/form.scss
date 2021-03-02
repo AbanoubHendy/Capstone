@@ -57,6 +57,7 @@ div.holderEntry {
         #countDown{
             font-size: 0.6em;
             color:peru;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
     }
     section#SecondPart{
@@ -64,12 +65,10 @@ div.holderEntry {
         grid-template-columns: repeat(4 , 1fr);
         grid-gap: 4px;
         font-size: 0.7em;
-        grid-template-areas: "tr tr tr tr"
-        "as as as as"
-        "er er er er"
-        "rt rt rt rt"
+        grid-template-areas: "tr tr as as"
+        "gh gh er er"
         "zx cv cv cv"
-        "bn bn nm nm"
+        "bn bn bn bn"
         "jk jk kl kl"
     }
     div#latitude{
@@ -80,29 +79,24 @@ div.holderEntry {
         grid-area: as;
         font-size: 14px;
     }
+    div#CityName{
+        grid-area: gh;
+    }
     div#country{
         grid-area: er;
     }
-    div#theDate{
-        grid-area: rt;
-    }
-    img#weatherImg{
+    div#weatherIcon{
         grid-area: zx;
         width: 60px;
         height: 60px;
         margin: auto;
         border-radius: 50px;
     }
-    div.weathertitle{
-        margin-top: 20px;
+    div#weatherDesc{
         grid-area: cv;
     }
-    div#HighTemp{
+    div#Temp{
         grid-area: bn;
-        font-size: 14px;
-    }
-    div#LowTemp{
-        grid-area: nm;
         font-size: 14px;
     }
     button#SaveTrip{
@@ -113,6 +107,7 @@ div.holderEntry {
         border: none;
         border-radius: 20px;
         margin: 20px;
+        margin-left: 5px;
     }
     button#RemoveTrip{
         grid-area: kl;
@@ -185,29 +180,24 @@ div.holderEntry {
             grid-area: as;
             font-size: 12px;
         }
+        div#CityName{
+            grid-area: gh;
+        }
         div#country{
             grid-area: er;
         }
-        div#theDate{
-            grid-area: rt;
-        }
-        img#weatherImg{
+        div#weatherIcon{
             grid-area: zx;
             width: 45px;
             height: 45px;
             margin: auto;
             border-radius: 50px;
         }
-        div.weathertitle{
-            margin-top: 16px;
+        div#weatherDesc{
             grid-area: cv;
         }
-        div#HighTemp{
+        div#Temp{
             grid-area: bn;
-            font-size: 12px;
-        }
-        div#LowTemp{
-            grid-area: nm;
             font-size: 12px;
         }
         button#SaveTrip{
@@ -297,29 +287,24 @@ div.holderEntry {
             grid-area: as;
             font-size: 9px;
         }
+        div#CityName{
+            grid-area: gh;
+        }
         div#country{
             grid-area: er;
         }
-        div#theDate{
-            grid-area: rt;
-        }
-        img#weatherImg{
+        div#weatherIcon{
             grid-area: zx;
             width: 35px;
             height: 35px;
             margin: auto;
             border-radius: 50px;
         }
-        div.weathertitle{
-            margin-top: 10px;
+        div#weatherDesc{
             grid-area: cv;
         }
-        div#HighTemp{
+        div#Temp{
             grid-area: bn;
-            font-size: 9px;
-        }
-        div#LowTemp{
-            grid-area: nm;
             font-size: 9px;
         }
         button#SaveTrip{
