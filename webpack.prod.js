@@ -3,13 +3,13 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: './src/Client/index.js',
     mode: 'production',
     output: {
-        libraryTarget: 'var',
-        library: 'Client'
+        publicPath: ''
     },
     module: {
         rules: [
@@ -20,7 +20,7 @@ module.exports = {
             },
             {
                 test: /\.(sa|sc|c)ss$/,
-                use: ["style-loader", "css-loader", "sass-loader"],           
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],           
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,

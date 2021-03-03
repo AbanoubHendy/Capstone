@@ -1,20 +1,20 @@
+import {CountDown} from "./CountDown";    
+import {GetTheWeather} from "./GetTheWeather";
 const GenerateBtn = document.getElementById('generate');
 GenerateBtn.addEventListener('click' , GenerateData);
 
 async function GenerateData(event) {
     event.preventDefault()
     const DateOfTravel = document.getElementById('TravelDate').value;
-    Client.CountDown(DateOfTravel)
+    CountDown(DateOfTravel);
     const cityInput = document.getElementById('TravelCity').value;
     console.log(cityInput);
-    Client.GetTheWeather(cityInput);
+    GetTheWeather(cityInput);
     const response = await Postdata('http://localhost:7000/weatherAdd' , {cityInput})
-    .then(weatherdata=>{ UpdataUI(weatherdata);})
+    .then(weatherdata=>{ UpdataUI(weatherdata);});
     const res = await PostData('http://localhost:7000/Geoadd' , {cityInput})
     .then(data=>{ UpdataUI(data);})
 }
-
-
 
 const PostData = async (url = 'http://localhost:7000/Geoadd' , data = {})=> {
     console.log('data => ', {url, data })

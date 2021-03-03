@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const cors = require('cors');
 const webpack = require('webpack');
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
 const app = express()
 const ApiKey1 = process.env.API_KEYGEO;
 console.log(`Your Geo Api key is ${process.env.API_KEYGEO}`);
@@ -56,9 +56,9 @@ app.post('/weatherAdd' , function(req , resp) {
     console.log('req.body -------> ', req.body)
     const { cityInput } = req.body;
     const weatherURL = `${weather_BaseUrl}city=${cityInput},NC&key=${ApiKey2}`;
-    const response = fetch(weatherURL)
+    const response = await fetch(weatherURL)
     try{
-        const weatherdata = response.json()
+        const weatherdata = await response.json()
         projectData = {
             city_name:weatherdata.city_name,
             temp:weatherdata.temp,

@@ -27,6 +27,7 @@ async function GetTheWeather(cityInput) {
         }catch(error) {
             console.log("There Is An Error" , error)
         }
-    }
+    } 
 }
+
 export { GetTheWeather }
