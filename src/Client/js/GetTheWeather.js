@@ -23,7 +23,7 @@ async function GetTheWeather(cityInput) {
             document.getElementById('CityName').innerHTML=`Lat: ${weatherdata.data[0].city_name}`;
             document.getElementById('weatherIcon').innerHTML=`Lon: ${weatherdata.data[0].icon}`;
             document.getElementById('weatherDesc').innerHTML=`Country: ${weatherdata.data[0].description}`;
-            document.getElementById('Temp').innerHTML=`Lon: ${weatherdata.data[0].temp}`;
+            document.getElementById('Temp').innerHTML=`Lon: ${weatherdata.data[0].temp}°C`;
         }catch(error) {
             console.log("There Is An Error" , error)
         }

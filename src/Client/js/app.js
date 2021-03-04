@@ -10,14 +10,14 @@ async function GenerateData(event) {
     const cityInput = document.getElementById('TravelCity').value;
     console.log(cityInput);
     GetTheWeather(cityInput);
-    const response = await Postdata('http://localhost:7000/weatherAdd' , {cityInput})
+    const response = await PostData('http://localhost:7000/weatherAdd' , {cityInput})
     .then(weatherdata=>{ UpdataUI(weatherdata);});
     const res = await PostData('http://localhost:7000/Geoadd' , {cityInput})
     .then(data=>{ UpdataUI(data);})
 }
 
 const PostData = async (url = 'http://localhost:7000/Geoadd' , data = {})=> {
-    console.log('data => ', {url, data })
+    console.log('data => ', {url, data });
     const res = await fetch (url , {
         method: 'POST',
         credentials: 'same-origin' ,

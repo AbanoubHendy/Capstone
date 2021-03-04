@@ -34,7 +34,6 @@ app.post('/Geoadd', async function(req, res) {
     const geo_BaseUrl ='http://api.geonames.org/searchJSON?';
     console.log('req.body -------> ', req.body)
     const { cityInput } = req.body;
-    //URL meaning cloud API
     const GeoURL = `${geo_BaseUrl}q=${cityInput}&maxRows=10&username=+${ApiKey1}`;
     const response = await fetch(GeoURL)
     try{
