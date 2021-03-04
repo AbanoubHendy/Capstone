@@ -1,6 +1,7 @@
 import { GenerateData } from './js/app'
 import { CountDown } from './js/CountDown'
 import { GetTheWeather } from './js/GetTheWeather'
+import { GetImageUrl } from './js/PixabayImg'
 
 import './Styles/base.scss'
 import './Styles/footer.scss'
@@ -16,5 +17,6 @@ alert('I exist')
 export{
     CountDown,
     GetTheWeather,
+    GetImageUrl,
     GenerateData
 }

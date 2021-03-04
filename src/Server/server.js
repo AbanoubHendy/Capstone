@@ -9,7 +9,9 @@ const app = express()
 const ApiKey1 = process.env.API_KEYGEO;
 console.log(`Your Geo Api key is ${process.env.API_KEYGEO}`);
 const ApiKey2 = process.env.API_KEYWEATHER;
-console.log(`Your Geo Api key is ${process.env.API_KEYWEATHER}`);
+console.log(`Your WeatherBit Api key is ${process.env.API_KEYWEATHER}`);
+const ApiKey3 = process.env.API_KEYPIXABAY;
+console.log(`Your Pixabay Api key is ${process.env.API_KEYPIXABAY}`);
 
 projectData ={};
 
@@ -50,7 +52,7 @@ app.post('/Geoadd', async function(req, res) {
     }
 })
 
-app.post('/weatherAdd' , function(req , resp) {
+app.post('/weatherAdd' , function(req , res) {
     const weather_BaseUrl = 'https://api.weatherbit.io/v2.0/forecast/daily?';
     console.log('req.body -------> ', req.body)
     const { cityInput } = req.body;
@@ -65,7 +67,25 @@ app.post('/weatherAdd' , function(req , resp) {
             description:weatherdata.description
         }
         console.log('data ===> ', weatherdata)
-        resp.send(weatherdata)
+        res.send(weatherdata)
+    }catch(error){
+        console.log(error)
+    }
+})
+
+app.post('/pixabayAdd' , function(req , res) {
+    const pixabay_BaseUrl = 'https://pixabay.com/api/';
+    console.log('req.body -------> ', req.body)
+    const { cityInput } = req.body;
+    const pixabayURL = `${pixabay_BaseUrl}?key=${ApiKey3}&q=${cityInput}&image_type=photo`;
+    const response = await fetch(pixabayURL)
+    try{
+        const pixabaydata = await response.json()
+        projectData = {
+            City_Image : pixabaydata.webformatURL
+        }
+        console.log('data ===> ', pixabaydata)
+        res.send(pixabaydata)
     }catch(error){
         console.log(error)
     }

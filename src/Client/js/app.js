@@ -1,5 +1,7 @@
 import {CountDown} from "./CountDown";    
 import {GetTheWeather} from "./GetTheWeather";
+import {GetImageUrl} from "./PixabayImg";
+
 const GenerateBtn = document.getElementById('generate');
 GenerateBtn.addEventListener('click' , GenerateData);
 
@@ -12,6 +14,9 @@ async function GenerateData(event) {
     GetTheWeather(cityInput);
     const response = await PostData('http://localhost:7000/weatherAdd' , {cityInput})
     .then(weatherdata=>{ UpdataUI(weatherdata);});
+    GetImageUrl(cityInput);
+    const resp = await PostData('http://localhost:7000/pixabayAdd' , {cityInput})
+    .then(pixabaydata=>{ UpdataUI(pixabaydata);});
     const res = await PostData('http://localhost:7000/Geoadd' , {cityInput})
     .then(data=>{ UpdataUI(data);})
 }
