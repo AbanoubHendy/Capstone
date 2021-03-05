@@ -52,7 +52,7 @@ app.post('/Geoadd', async function(req, res) {
     }
 })
 
-app.post('/weatherAdd' , function(req , res) {
+app.post('/weatherAdd' , async function(req , res) {
     const weather_BaseUrl = 'https://api.weatherbit.io/v2.0/forecast/daily?';
     console.log('req.body -------> ', req.body)
     const { cityInput } = req.body;
@@ -73,7 +73,7 @@ app.post('/weatherAdd' , function(req , res) {
     }
 })
 
-app.post('/pixabayAdd' , function(req , res) {
+app.post('/pixabayAdd' , async function(req , res) {
     const pixabay_BaseUrl = 'https://pixabay.com/api/';
     console.log('req.body -------> ', req.body)
     const { cityInput } = req.body;
