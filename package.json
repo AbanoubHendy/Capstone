@@ -5,7 +5,6 @@
   "scripts": {
     "test": "jest",
     "start": "node src/Server/server.js",
-    "start:dev": "webpack-dev-server",
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack serve --config webpack.dev.js --open"
   },

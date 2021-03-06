@@ -56,15 +56,15 @@ app.post('/weatherAdd' , async function(req , res) {
     const weather_BaseUrl = 'https://api.weatherbit.io/v2.0/forecast/daily?';
     console.log('req.body -------> ', req.body)
     const { cityInput } = req.body;
-    const weatherURL = `${weather_BaseUrl}city=${cityInput},NC&key=${ApiKey2}`;
+    const weatherURL = `${weather_BaseUrl}city=${cityInput}&key=${ApiKey2}`;
     const response = await fetch(weatherURL)
     try{
         const weatherdata = await response.json()
         projectData = {
             city_name:weatherdata.city_name,
-            temp:weatherdata.temp,
             icon:weatherdata.icon,
-            description:weatherdata.description
+            description:weatherdata.description,
+            temp:weatherdata.temp
         }
         console.log('data ===> ', weatherdata)
         res.send(weatherdata)
@@ -73,20 +73,20 @@ app.post('/weatherAdd' , async function(req , res) {
     }
 })
 
-app.post('/pixabayAdd' , async function(req , res) {
-    const pixabay_BaseUrl = 'https://pixabay.com/api/';
-    console.log('req.body -------> ', req.body)
-    const { cityInput } = req.body;
-    const pixabayURL = `${pixabay_BaseUrl}?key=${ApiKey3}&q=${cityInput}&image_type=photo`;
-    const response = await fetch(pixabayURL)
-    try{
-        const pixabaydata = await response.json()
-        projectData = {
-            City_Image : pixabaydata.webformatURL
-        }
-        console.log('data ===> ', pixabaydata)
-        res.send(pixabaydata)
-    }catch(error){
-        console.log(error)
-    }
-})
+// app.post('/pixabayAdd' , async function(req , res) {
+//     const pixabay_BaseUrl = 'https://pixabay.com/api/';
+//     console.log('req.body -------> ', req.body)
+//     const { cityInput } = req.body;
+//     const pixabayURL = `${pixabay_BaseUrl}?key=${ApiKey3}&q=${cityInput}&image_type=photo`;
+//     const response = await fetch(pixabayURL)
+//     try{
+//         const pixabaydata = await response.json()
+//         projectData = {
+//             City_Image : pixabaydata.webformatURL
+//         }
+//         console.log('data ===> ', pixabaydata)
+//         res.send(pixabaydata)
+//     }catch(error){
+//         console.log(error)
+//     }
+// })

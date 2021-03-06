@@ -11,14 +11,15 @@ async function GenerateData(event) {
     CountDown(DateOfTravel);
     const cityInput = document.getElementById('TravelCity').value;
     console.log(cityInput);
-    GetTheWeather(cityInput);
-    const response = await PostData('http://localhost:7000/weatherAdd' , {cityInput})
-    .then(weatherdata=>{ UpdataUI(weatherdata);});
-    GetImageUrl(cityInput);
-    const resp = await PostData('http://localhost:7000/pixabayAdd' , {cityInput})
-    .then(pixabaydata=>{ UpdataUI(pixabaydata);});
     const res = await PostData('http://localhost:7000/Geoadd' , {cityInput})
     .then(data=>{ UpdataUI(data);})
+    GetTheWeather()
+    const response = await PostData('http://localhost:7000/weatherAdd' , {cityInput})
+    .then(weatherdata=>{ UpdataUI(weatherdata);});
+    // GetImageUrl(cityInput);
+    // const resp = await PostData('http://localhost:7000/pixabayAdd' , {cityInput})
+    // .then(pixabaydata=>{ UpdataUI(pixabaydata);});
+    
 }
 
 const PostData = async (url = 'http://localhost:7000/Geoadd' , data = {})=> {
