@@ -25,7 +25,7 @@ const port = 7000;
 const server = app.listen(port , listening);
 function listening() {
     console.log(`the server running on: ${port}`);
-};
+}
 
 app.get('/getData' , function(req , res){
     res.send(projectData);
@@ -36,7 +36,7 @@ app.post('/Geoadd', async function(req, res) {
     const geo_BaseUrl ='http://api.geonames.org/searchJSON?';
     console.log('req.body -------> ', req.body)
     const { cityInput } = req.body;
-    const GeoURL = `${geo_BaseUrl}q=${cityInput}&maxRows=10&username=+${ApiKey1}`;
+    const GeoURL = `${geo_BaseUrl}q=${cityInput}&maxRows=10&username=${ApiKey1}`;;
     const response = await fetch(GeoURL)
     try{
     const data = await response.json()
@@ -62,7 +62,6 @@ app.post('/weatherAdd' , async function(req , res) {
         const weatherdata = await response.json()
         projectData = {
             city_name:weatherdata.city_name,
-            icon:weatherdata.icon,
             description:weatherdata.description,
             temp:weatherdata.temp
         }
@@ -73,20 +72,20 @@ app.post('/weatherAdd' , async function(req , res) {
     }
 })
 
-// app.post('/pixabayAdd' , async function(req , res) {
-//     const pixabay_BaseUrl = 'https://pixabay.com/api/';
-//     console.log('req.body -------> ', req.body)
-//     const { cityInput } = req.body;
-//     const pixabayURL = `${pixabay_BaseUrl}?key=${ApiKey3}&q=${cityInput}&image_type=photo`;
-//     const response = await fetch(pixabayURL)
-//     try{
-//         const pixabaydata = await response.json()
-//         projectData = {
-//             City_Image : pixabaydata.webformatURL
-//         }
-//         console.log('data ===> ', pixabaydata)
-//         res.send(pixabaydata)
-//     }catch(error){
-//         console.log(error)
-//     }
-// })
+app.post('/pixabayAdd' , async function(req , res) {
+    const pixabay_BaseUrl = 'https://pixabay.com/api/?';
+    console.log('req.body -------> ', req.body)
+    const { cityInput } = req.body;
+    const pixabayURL = `${pixabay_BaseUrl}key=${ApiKey3}&q=${cityInput}&image_type=photo`;
+    const response = await fetch(pixabayURL)
+    try{
+        const pixabaydata =  await response.json()
+        projectData = {
+            webformatURL : pixabaydata.webformatURL
+        }
+        console.log('data ===> ', pixabaydata)
+        res.send(pixabaydata)
+    }catch(error){
+        console.log(error)
+    }
+})

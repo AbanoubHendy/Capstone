@@ -1,25 +1,23 @@
-import {CountDown} from "./CountDown";    
+import {CountDown} from "./CountDown";
+import {SaveDelete} from "./SaveDeleteTravel";  
 import {GetTheWeather} from "./GetTheWeather";
 import {GetImageUrl} from "./PixabayImg";
 
 const GenerateBtn = document.getElementById('generate');
 GenerateBtn.addEventListener('click' , GenerateData);
 
+
 async function GenerateData(event) {
     event.preventDefault()
     const DateOfTravel = document.getElementById('TravelDate').value;
     CountDown(DateOfTravel);
+    SaveDelete();
     const cityInput = document.getElementById('TravelCity').value;
     console.log(cityInput);
     const res = await PostData('http://localhost:7000/Geoadd' , {cityInput})
-    .then(data=>{ UpdataUI(data);})
-    GetTheWeather()
-    const response = await PostData('http://localhost:7000/weatherAdd' , {cityInput})
-    .then(weatherdata=>{ UpdataUI(weatherdata);});
-    // GetImageUrl(cityInput);
-    // const resp = await PostData('http://localhost:7000/pixabayAdd' , {cityInput})
-    // .then(pixabaydata=>{ UpdataUI(pixabaydata);});
-    
+    .then(data=>{ UpdateUI(data);})
+    GetTheWeather(cityInput); //updated  
+    GetImageUrl(cityInput);
 }
 
 const PostData = async (url = 'http://localhost:7000/Geoadd' , data = {})=> {
@@ -40,8 +38,7 @@ const PostData = async (url = 'http://localhost:7000/Geoadd' , data = {})=> {
         console.log("There Is An Error" , error)
     }
 }
-
-const UpdataUI = async (data) => {
+const UpdateUI = async (data) => {
     try{
         document.getElementById('latitude').innerHTML=`Lat: ${data.geonames[0].lat}`;
         document.getElementById('longitude').innerHTML=`Lon: ${data.geonames[0].lng}`;
@@ -49,5 +46,6 @@ const UpdataUI = async (data) => {
     }catch(error) {
         console.log("There Is An Error" , error)
     }
-}
+} 
+
 export { GenerateData }
