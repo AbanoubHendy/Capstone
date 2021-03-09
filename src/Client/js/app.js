@@ -18,6 +18,9 @@ async function GenerateData(event) {
     .then(data=>{ UpdateUI(data);})
     GetTheWeather(cityInput); //updated  
     GetImageUrl(cityInput);
+    if(cityInput == "") {
+        GetImageUrl(cityInput);
+    }
 }
 
 const PostData = async (url = 'http://localhost:7000/Geoadd' , data = {})=> {

@@ -3,7 +3,8 @@ import { CountDown } from './js/CountDown'
 import { SaveDelete } from './js/SaveDeleteTravel'
 import { GetTheWeather } from './js/GetTheWeather'
 import { GetImageUrl } from './js/PixabayImg'
-
+import { SaveTheTrip } from './js/SaveDeleteTravel'
+import { RemoveTheTrip } from './js/SaveDeleteTravel'
 
 import './Styles/base.scss'
 import './Styles/footer.scss'
@@ -19,6 +20,8 @@ alert('I exist')
 export{
     CountDown,
     SaveDelete,
+    SaveTheTrip,
+    RemoveTheTrip,
     GetTheWeather,
     GetImageUrl,
     GenerateData

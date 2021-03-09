@@ -4,12 +4,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
     entry: './src/Client/index.js',
     mode: 'production',
     output: {
-        publicPath: ''
+        publicPath: '',
+        libraryTarget: 'var',
+        library: 'Client'
     },
     module: {
         rules: [
@@ -49,6 +52,7 @@ module.exports = {
             preset: ['default', { discardComments: { removeAll: true } }],
             },
             canPrint: true
-        })
+        }),
+        new WorkboxPlugin.GenerateSW()
     ]
 }

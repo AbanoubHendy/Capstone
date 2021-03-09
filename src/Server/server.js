@@ -62,6 +62,7 @@ app.post('/weatherAdd' , async function(req , res) {
         const weatherdata = await response.json()
         projectData = {
             city_name:weatherdata.city_name,
+
             description:weatherdata.description,
             temp:weatherdata.temp
         }
@@ -73,10 +74,12 @@ app.post('/weatherAdd' , async function(req , res) {
 })
 
 app.post('/pixabayAdd' , async function(req , res) {
-    const pixabay_BaseUrl = 'https://pixabay.com/api/?';
+    const pixabay_BaseUrl = "https://pixabay.com/api/?";
+    const PixaApi = `&key=${ApiKey3}`;
+    const PixaPhoto = "&image_type=photo";
     console.log('req.body -------> ', req.body)
     const { cityInput } = req.body;
-    const pixabayURL = `${pixabay_BaseUrl}key=${ApiKey3}&q=${cityInput}&image_type=photo`;
+    const pixabayURL = `${pixabay_BaseUrl}q=${cityInput}${PixaApi}${PixaPhoto}`;
     const response = await fetch(pixabayURL)
     try{
         const pixabaydata =  await response.json()

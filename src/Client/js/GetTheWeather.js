@@ -21,7 +21,7 @@ async function GetTheWeather(cityInput) {
     const UpdateUI = async (weatherdata) => {
         try{
             document.getElementById('CityName').innerHTML=`City: ${weatherdata.city_name}`;
-            document.getElementById('weatherDesc').innerHTML=weatherdata.data[0].weather.description;
+            document.getElementById('weatherDesc').innerHTML=`The Weather Will Be ${weatherdata.data[0].weather.description}`;
             document.getElementById('Temp').innerHTML=`Temp: ${weatherdata.data[0].temp}°C`;
         }catch(error) {
             console.log("There Is An Error" , error)

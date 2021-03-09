@@ -31,19 +31,19 @@
         <div id="btnbox">
             <button id="generate" type = "submit" onclick="event => Client.GenerateData(event)"> Generate </button>
         </div>
-        <div class ="holderEntry">
+        <div id ="holderEntry">
             <section id="FirstPart">
-                <img id="CountryImg">
-                <div id="countDown"></div>
+                <div id="CountryImg"></div>
             </section>
-            <section id = "SecondPart">
-                <div id = "latitude"></div> 
-                <div id = "longitude"></div>
+            <section id="SecondPart">
+                <div id="latitude"></div> 
+                <div id="longitude"></div>
                 <div id="CityName"></div>
-                <div id = "country"></div>
+                <div id="country"></div>
                 <div id="weatherCode"></div>
                 <div id="weatherDesc"></div>
                 <div id="Temp"></div>
+                <div id="countDown"></div>
                 <button id="SaveTrip" style="visibility: hidden;"></button>
                 <button id="RemoveTrip" style="visibility: hidden;"></button>
             </section>
@@ -51,5 +51,14 @@
         <footer>
             <p id="footpara">TravelApp @Copyright 2020/2021</p>
         </footer>
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
     </body>
 </html>

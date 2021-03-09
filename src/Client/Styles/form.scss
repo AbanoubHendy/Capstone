@@ -41,7 +41,7 @@ button#generate{
     border-radius: 15px;
 }
 
-div.holderEntry {
+div#holderEntry {
     margin: auto;
     width: 600px;
     opacity: 0.9;
@@ -53,21 +53,23 @@ div.holderEntry {
     section#FirstPart{
         width: 40%;
         float: left;
-        #countDown{
-            font-size: 0.6em;
-            color:peru;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        div#CountryImg{
+            img{
+                width: 220px;
+                height: 210px;
+            }
         }
     }
     section#SecondPart{
         display: grid;
         grid-template-columns: repeat(4 , 1fr);
-        grid-gap: 4px;
+        grid-gap: 15px;
         font-size: 0.7em;
         grid-template-areas: "tr tr as as"
         "gh gh er er"
         "cv cv cv cv"
         "bn bn bn bn"
+        "lo lo lo lo"
         "jk jk kl kl"
     }
     div#latitude{
@@ -90,6 +92,12 @@ div.holderEntry {
     div#Temp{
         grid-area: bn;
         font-size: 14px;
+    }
+    div#countDown{
+        font-size: 1em;
+        color:peru;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        grid-area: lo;
     }
     button#SaveTrip{
         grid-area: jk;
@@ -152,7 +160,7 @@ div.holderEntry {
         border-radius: 15px;
     }
     
-    div.holderEntry {
+    div#holderEntry {
         margin: auto;
         width: 450px;
         opacity: 0.9;
@@ -160,8 +168,15 @@ div.holderEntry {
         font-size: 1.5em;
         padding-top: 7px;
         padding-left: 7px;
-        div#countDown{
-            font-size: 0.5em;
+        section#FirstPart{
+            width: 45%;
+            float: left;
+            div#CountryImg{
+                img{
+                    width: 190px;
+                    height: 190px;
+                }
+            }
         }
         div#latitude{
             grid-area: tr;
@@ -184,9 +199,13 @@ div.holderEntry {
             grid-area: bn;
             font-size: 12px;
         }
+        div#countDown{
+            font-size: 0.8em;
+            grid-area: lo;
+        }
         button#SaveTrip{
             grid-area: jk;
-            height: 25px;
+            height: 30px;
             width: 70%;
             background-color: orangered;
             border: none;
@@ -196,18 +215,17 @@ div.holderEntry {
         }
         button#RemoveTrip{
             grid-area: kl;
-            height: 25px;
+            height: 30px;
             width: 70%;
             background-color: orangered;
             border: none;
             border-radius: 20px;
             margin: 15px;
-            font-size: 0.8em;
+            font-size: 0.7em;
         }
     }
     
 }
-
 
 @media(max-width: 600px) { 
     div#app{
@@ -217,7 +235,6 @@ div.holderEntry {
         font-size: 0.9em;
         margin-top: 60px;
     }
-    
     section{
         label{
             display:block;
@@ -228,7 +245,7 @@ div.holderEntry {
         input{
             display:block;
             height: 25px;
-            width: 190px;
+            width: 150px;
             background:#22b2da;
             font-size: 0.5em;
             border: none;
@@ -251,16 +268,27 @@ div.holderEntry {
         border-radius: 15px;
     }
     
-    div.holderEntry {
+    div#holderEntry {
         margin: auto;
-        width: 300px;
+        width: 40vh;
         opacity: 0.9;
         color:white;
         font-size: 1.2em;
         padding-top: 5px;
         padding-left: 5px;
-        div#countDown{
-            font-size: 0.4em;
+        section#FirstPart{
+            width: 50%;
+            float: left;
+            div#CountryImg{
+                img{
+                    width: 135px;
+                    height: 160px;
+                }
+            }
+        }
+        section#SecondPart{
+            grid-gap: 10px;
+            font-size: 0.7em;
         }
         div#latitude{
             grid-area: tr;
@@ -283,6 +311,10 @@ div.holderEntry {
             grid-area: bn;
             font-size: 9px;
         }
+        div#countDown{
+            font-size: 0.7em;
+            grid-area: lo;
+        }
         button#SaveTrip{
             grid-area: jk;
             height: 20px;
@@ -290,18 +322,16 @@ div.holderEntry {
             background-color: orangered;
             border: none;
             border-radius: 20px;
-            margin: 10px;
             font-size: 0.7em;
         }
         button#RemoveTrip{
             grid-area: kl;
             height: 20px;
-            width: 80%;
+            width: 70%;
             background-color: orangered;
             border: none;
             border-radius: 20px;
-            margin: 10px;
-            font-size: 0.7em;
+            font-size: 0.6em;
         }
     }
 }
