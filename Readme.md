@@ -3,14 +3,14 @@ This is a simple Readme that shown the dependencies and refrences that i used in
 This App is used to add your trip where yo want to go and the date you want to travel in and you can save and delete the trip 
 
 ## Dependencies & Refrences
-[using body-parser , cors , express packages] (https://classroom.udacity.com/nanodegrees/nd0011-ent/parts/89eef1c0-7d30-4fbb-8000-503c343f2a87/modules/d5759801-4827-41f3-bd0e-b4d0e38743a0/lessons/67f93c1e-ba0e-4049-80c8-9e548fccace0/concepts/408bb8b4-53af-4fc1-86b7-2fb30ad7040a)
+[using body-parser , cors , express packages](https://classroom.udacity.com/nanodegrees/nd0011-ent/parts/89eef1c0-7d30-4fbb-8000-503c343f2a87/modules/d5759801-4827-41f3-bd0e-b4d0e38743a0/lessons/67f93c1e-ba0e-4049-80c8-9e548fccace0/concepts/408bb8b4-53af-4fc1-86b7-2fb30ad7040a)
 
-[installing webpack to work with server] (https://classroom.udacity.com/nanodegrees/nd0011-ent/parts/d7df5719-29e6-423f-94b1-f974518fb358/modules/f02a1ec4-bc41-4275-b259-7ce1e829bf5e/lessons/3ad904a6-8fbd-462f-a28b-ca68d9d920c3/concepts/43bcc04f-eb88-43a3-ae60-01ae78245820)
+[installing webpack to work with server](https://classroom.udacity.com/nanodegrees/nd0011-ent/parts/d7df5719-29e6-423f-94b1-f974518fb358/modules/f02a1ec4-bc41-4275-b259-7ce1e829bf5e/lessons/3ad904a6-8fbd-462f-a28b-ca68d9d920c3/concepts/43bcc04f-eb88-43a3-ae60-01ae78245820)
 
 ### Webpack Loaders
-[using babel to convert ECMAScript 2015+ code into compatible version of JavaScript] (https://classroom.udacity.com/nanodegrees/nd0011-ent/parts/d7df5719-29e6-423f-94b1-f974518fb358/modules/f02a1ec4-bc41-4275-b259-7ce1e829bf5e/lessons/3ad904a6-8fbd-462f-a28b-ca68d9d920c3/concepts/33381d06-a9ba-4500-baac-a5733fb8beaa)
+[using babel to convert ECMAScript 2015+ code into compatible version of JavaScript](https://classroom.udacity.com/nanodegrees/nd0011-ent/parts/d7df5719-29e6-423f-94b1-f974518fb358/modules/f02a1ec4-bc41-4275-b259-7ce1e829bf5e/lessons/3ad904a6-8fbd-462f-a28b-ca68d9d920c3/concepts/33381d06-a9ba-4500-baac-a5733fb8beaa)
 
-[using style-loader node-sass css-loader sass-loader packages to turn our sass into css] (https://classroom.udacity.com/nanodegrees/nd0011-ent/parts/d7df5719-29e6-423f-94b1-f974518fb358/modules/f02a1ec4-bc41-4275-b259-7ce1e829bf5e/lessons/5db6cd7a-6227-461e-9978-78bf2238ce78/concepts/5abdefd1-f7f8-4d0c-9567-8620b7a1aad1)
+[using style-loader node-sass css-loader sass-loader packages to turn our sass into css](https://classroom.udacity.com/nanodegrees/nd0011-ent/parts/d7df5719-29e6-423f-94b1-f974518fb358/modules/f02a1ec4-bc41-4275-b259-7ce1e829bf5e/lessons/5db6cd7a-6227-461e-9978-78bf2238ce78/concepts/5abdefd1-f7f8-4d0c-9567-8620b7a1aad1)
 
 ### Webpack Plugins
 [using html-webpack-plugin package to adding assets to an html file automatically](https://classroom.udacity.com/nanodegrees/nd0011-ent/parts/d7df5719-29e6-423f-94b1-f974518fb358/modules/f02a1ec4-bc41-4275-b259-7ce1e829bf5e/lessons/3ad904a6-8fbd-462f-a28b-ca68d9d920c3/concepts/36a42add-5cc5-41d0-9877-b9388ffb360d)
