@@ -86,7 +86,6 @@ app.post('/pixabayAdd' , async function(req , res) {
         projectData = {
             webformatURL : pixabaydata.webformatURL
         }
-        console.log('data ===> ', pixabaydata)
         res.send(pixabaydata)
     }catch(error){
         console.log(error)

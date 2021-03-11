@@ -1,4 +1,4 @@
-footer{
+footer#FooterPart{
     text-align: center;
     height: 130px;  
     background-color:black;
@@ -17,11 +17,11 @@ footer{
 }
 
 
-@media (min-width: 601px) and (max-width: 1250px){
-    footer{
+@media (min-width: 601px) and (max-width: 1100px){
+    footer#FooterPart{
         text-align: center;
         height: 110px; 
-        position:absolute;
+        position:relative;
         bottom: 0; 
         p#footpara{
             line-height: 1.3em;
@@ -37,7 +37,7 @@ footer{
 }
 
 @media(max-width: 600px) { 
-    footer{
+    footer#FooterPart{
         text-align: center;
         height: 80px;  
         position:absolute;
@@ -47,12 +47,11 @@ footer{
             color: green;
             width: 95%;
             font-size: 15px;
-            font-size: 10px;
             font-family: Georgia, 'Times New Roman', Times, serif;
             color:burlywood;
             width: 100%;
             background-color: transparent;
-            padding-top: 40px;  
+            padding-top: 30px;  
         }
     }
 }

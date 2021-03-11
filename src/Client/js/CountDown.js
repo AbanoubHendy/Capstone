@@ -1,4 +1,4 @@
-function CountDown(DateOfTravel) {
+const CountDown = (DateOfTravel) => {
     const HolderColor = document.getElementById('holderEntry');
     HolderColor.style.backgroundColor = "rgb(19, 80, 82)";
     const NameOfCity = document.getElementById('TravelCity').value;

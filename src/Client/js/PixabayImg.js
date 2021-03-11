@@ -1,4 +1,4 @@
-async function GetImageUrl(cityInput) {
+const GetImageUrl = async(cityInput) => {
     const PostData = async (url = 'http://localhost:7000/pixabayAdd' , pixabaydata = {})=> {
         console.log('data => ', {url, pixabaydata })
         const response = await fetch (url , {

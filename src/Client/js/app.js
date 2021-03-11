@@ -3,11 +3,13 @@ import {SaveDelete} from "./SaveDeleteTravel";
 import {GetTheWeather} from "./GetTheWeather";
 import {GetImageUrl} from "./PixabayImg";
 
-const GenerateBtn = document.getElementById('generate');
-GenerateBtn.addEventListener('click' , GenerateData);
 
+document.addEventListener('DOMContentLoaded', function () {
+    const GenerateBtn = document.getElementById('generate');
+    GenerateBtn.addEventListener('click' , GenerateData);
+})
 
-async function GenerateData(event) {
+const GenerateData = async(event) => {
     event.preventDefault()
     const DateOfTravel = document.getElementById('TravelDate').value;
     CountDown(DateOfTravel);
@@ -48,6 +50,15 @@ const UpdateUI = async (data) => {
         document.getElementById('country').innerHTML=`Country: ${data.geonames[0].countryName}`;
     }catch(error) {
         console.log("There Is An Error" , error)
+        const RemoveChilds = document.getElementById('SecondPart');
+        RemoveChilds.textContent= '';
+        const AnError = document.createElement("p");
+        const ErrorTitle = document.createTextNode("There Is An Error Please Check Your City Again");
+        AnError.appendChild(ErrorTitle);
+        AnError.style.color= "red";
+        AnError.style.gridArea= "cv";
+        AnError.style.marginBottom= "100px";
+        document.getElementById('SecondPart').appendChild(AnError);
     }
 } 
 

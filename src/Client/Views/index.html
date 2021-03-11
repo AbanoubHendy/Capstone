@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>TravelApp</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <header class="page__header">
@@ -13,11 +14,11 @@
         </div>
         <div id = "app">
             <section class ="holderCountry">
-                <label for="country">Your Next Travel To</label>
+                <label>Your Next Travel To</label>
                 <input type="text" id="TravelCity" placeholder="City">
             </section>
             <section class ="holderDate">
-                <label for="date">Travel Date</label>
+                <label>Travel Date</label>
                 <input type="date" id="TravelDate">
             </section>
         </div>
@@ -41,10 +42,10 @@
                 <button id="RemoveTrip" style="visibility: hidden;"></button>
             </section>
         </div>
-        <footer>
+        <footer id="FooterPart">
             <p id="footpara">TravelApp @Copyright 2020/2021</p>
         </footer>
-        <script>
+        <!-- <script>
             // Check that service workers are supported
             if ('serviceWorker' in navigator) {
                 // Use the window load event to keep the page load performant
@@ -52,6 +53,6 @@
                     navigator.serviceWorker.register('/service-worker.js');
                 });
             }
-        </script>
+        </script> -->
     </body>
 </html>

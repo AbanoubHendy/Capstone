@@ -40,6 +40,10 @@ button#generate{
     margin-bottom: 50px;
     border-radius: 15px;
 }
+button#generate:hover{
+    color: wheat;
+    background-color: rgb(92, 81, 81);
+}
 
 div#holderEntry {
     margin: auto;
@@ -109,6 +113,9 @@ div#holderEntry {
         margin: 20px;
         margin-left: 5px;
     }
+    button#SaveTrip:hover{
+        background-color: yellow;
+    }
     button#RemoveTrip{
         grid-area: kl;
         height: 30px;
@@ -118,10 +125,13 @@ div#holderEntry {
         border-radius: 20px;
         margin: 20px;
     }
+    button#RemoveTrip:hover{
+        background-color: yellow;
+    }
 }
 
 
-@media (min-width: 601px) and (max-width: 1250px){
+@media (min-width: 601px) and (max-width: 1100px){
     div#app{
         display: flex;
         justify-content: center;
@@ -168,6 +178,7 @@ div#holderEntry {
         font-size: 1.5em;
         padding-top: 7px;
         padding-left: 7px;
+        margin-bottom: 50px;
         section#FirstPart{
             width: 45%;
             float: left;
@@ -260,7 +271,7 @@ div#holderEntry {
     
     button#generate{
         width: 70px;
-        height: 20px;
+        height: 25px;
         background:orangered;
         font-size: 0.9em;
         border: none;
@@ -281,14 +292,23 @@ div#holderEntry {
             float: left;
             div#CountryImg{
                 img{
-                    width: 155px;
-                    height: 155px;
+                    width: 120px;
+                    height: 140px;
                 }
             }
         }
         section#SecondPart{
-            grid-gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(4 , 1fr);
+            grid-gap: 7px;
             font-size: 0.7em;
+            grid-template-areas: "tr tr as as"
+            "gh gh gh gh"
+            "er er er er"
+            "cv cv cv cv"
+            "bn bn bn bn"
+            "lo lo lo lo"
+            "jk jk kl kl"
         }
         div#latitude{
             grid-area: tr;
@@ -322,7 +342,7 @@ div#holderEntry {
             background-color: orangered;
             border: none;
             border-radius: 20px;
-            font-size: 0.7em;
+            font-size: 0.6em;
         }
         button#RemoveTrip{
             grid-area: kl;
@@ -332,6 +352,7 @@ div#holderEntry {
             border: none;
             border-radius: 20px;
             font-size: 0.6em;
+            margin-left: 5px;
         }
     }
 }
