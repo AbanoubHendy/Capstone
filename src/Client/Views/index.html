@@ -23,7 +23,7 @@
             </section>
         </div>
         <div id="btnbox">
-            <button id="generate" type = "submit" onclick="event => Client.GenerateData(event)"> Generate </button>
+            <button id="generate" value="enable" type = "submit" onclick="event => Client.GenerateData(event)"> Generate </button>
         </div>
         <div id ="holderEntry">
             <section id="FirstPart">
@@ -45,7 +45,7 @@
         <footer id="FooterPart">
             <p id="footpara">TravelApp @Copyright 2020/2021</p>
         </footer>
-        <!-- <script>
+        <script>
             // Check that service workers are supported
             if ('serviceWorker' in navigator) {
                 // Use the window load event to keep the page load performant
@@ -53,6 +53,6 @@
                     navigator.serviceWorker.register('/service-worker.js');
                 });
             }
-        </script> -->
+        </script>
     </body>
 </html>

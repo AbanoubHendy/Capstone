@@ -20,9 +20,6 @@ const GenerateData = async(event) => {
     .then(data=>{ UpdateUI(data);})
     GetTheWeather(cityInput); //updated  
     GetImageUrl(cityInput);
-    if(cityInput == "") {
-        GetImageUrl(cityInput);
-    }
 }
 
 const PostData = async (url = 'http://localhost:7000/Geoadd' , data = {})=> {
@@ -44,6 +41,7 @@ const PostData = async (url = 'http://localhost:7000/Geoadd' , data = {})=> {
     }
 }
 const UpdateUI = async (data) => {
+    const cityInput = document.getElementById('TravelCity').value;
     try{
         document.getElementById('latitude').innerHTML=`Lat: ${data.geonames[0].lat}`;
         document.getElementById('longitude').innerHTML=`Lon: ${data.geonames[0].lng}`;
@@ -61,5 +59,4 @@ const UpdateUI = async (data) => {
         document.getElementById('SecondPart').appendChild(AnError);
     }
 } 
-
 export { GenerateData }

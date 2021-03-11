@@ -1,5 +1,3 @@
-import { CountDown } from "./CountDown";
-
 const GetTheWeather = async(cityInput) => {
     //make an async function to get the url and the weather data from the post method and save the data
     const PostData = async (url = 'http://localhost:7000/weatherAdd' , weatherdata = {})=> {
