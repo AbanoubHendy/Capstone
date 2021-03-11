@@ -287,12 +287,13 @@ div#holderEntry {
         font-size: 1.2em;
         padding-top: 5px;
         padding-left: 5px;
+        margin-bottom: 100px;
         section#FirstPart{
             width: 50%;
             float: left;
             div#CountryImg{
                 img{
-                    width: 120px;
+                    width: 110px;
                     height: 140px;
                 }
             }
@@ -347,7 +348,7 @@ div#holderEntry {
         button#RemoveTrip{
             grid-area: kl;
             height: 20px;
-            width: 70%;
+            width: 80%;
             background-color: orangered;
             border: none;
             border-radius: 20px;

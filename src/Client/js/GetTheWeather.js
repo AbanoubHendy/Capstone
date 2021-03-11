@@ -12,7 +12,7 @@ const GetTheWeather = async(cityInput) => {
             body: JSON.stringify(weatherdata),
         });
         try{
-            //add new data to make the user enter data more than once 
+            //add new data to make the user entered data more than once 
             const NewData = await response.json();
             console.log(NewData);
             //return the data that enter by the user
@@ -32,7 +32,7 @@ const GetTheWeather = async(cityInput) => {
             const TimeLeft = DateTravel - NowDate;
             const Days = Math.floor(TimeLeft / (1000 * 60 * 60 * 24))+1;
             if(Days < 1){
-                document.getElementById('Temp').innerHTML=`Temp: `;
+                document.getElementById('Temp').innerHTML=`Temp: You Enter An Old Date`;
             }
             if(Days < 16) {
             document.getElementById('Temp').innerHTML=`Temp: ${weatherdata.data[Days].temp}°C`;

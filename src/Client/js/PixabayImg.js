@@ -15,7 +15,7 @@ const GetImageUrl = async(cityInput) => {
             //add new data to make the user enter data more than once 
             const NewData = await response.json();
             console.log(NewData);
-            //return the data that enter by the user
+            //return the data that entered by the user
             return NewData;
         }catch(error) {
             console.log("There Is An Error" , error)
@@ -28,13 +28,9 @@ const GetImageUrl = async(cityInput) => {
         }catch(error) {
             console.log("There Is An Error" , error)
         }
-        if(cityInput ==""){
-            alert('Please Enter The City');
-            document.getElementById('CountryImg').innerHTML=`<img src="https://pixabay.com/get/g081bb226d8f7f14d33e4c2cb8286e93124ecb8fb40c9fbd058df17482490407f3b15aaddfe98829244989588ded448cdc001ac9b33d4dd605d0f47d609dea5a2_640.jpg">`;
-        }; 
         if(pixabaydata.total == 0){
             alert('Please Enter The City Correct');
-            document.getElementById('CountryImg').innerHTML=`<img src="https://pixabay.com/get/g081bb226d8f7f14d33e4c2cb8286e93124ecb8fb40c9fbd058df17482490407f3b15aaddfe98829244989588ded448cdc001ac9b33d4dd605d0f47d609dea5a2_640.jpg">`;
+            document.getElementById('CountryImg').innerHTML=`<img src="https://pixabay.com/get/g6764ed1962c8acb311f03027855cef094b3de352472ee1c0d8dcb468656ac6f188017d33a03c354f732ef95371446e1dcd0e2f70f2c8fdffa1593c55e656a1d2_640.jpg">`;
         };
     }
     //make an await call for postData function and pass cityInput 
