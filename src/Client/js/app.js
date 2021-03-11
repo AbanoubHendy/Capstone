@@ -12,14 +12,22 @@ document.addEventListener('DOMContentLoaded', function () {
 const GenerateData = async(event) => {
     event.preventDefault()
     const DateOfTravel = document.getElementById('TravelDate').value;
-    CountDown(DateOfTravel);
-    SaveDelete();
     const cityInput = document.getElementById('TravelCity').value;
-    console.log(cityInput);
-    const res = await PostData('http://localhost:7000/Geoadd' , {cityInput})
-    .then(data=>{ UpdateUI(data);})
-    GetTheWeather(cityInput); //updated  
-    GetImageUrl(cityInput);
+    if (cityInput != "") {
+        CountDown(DateOfTravel);
+        SaveDelete();
+        console.log(cityInput);    
+        const res = await PostData('http://localhost:7000/Geoadd' , {cityInput})
+        .then(data=>{ UpdateUI(data);})
+        GetTheWeather(cityInput); //updated  
+        GetImageUrl(cityInput);
+        if(cityInput == "") {
+            GetImageUrl(cityInput);
+        }
+    } else {
+        console.log("Invalid URL")
+        alert("Please enter valid City");
+    }
 }
 
 const PostData = async (url = 'http://localhost:7000/Geoadd' , data = {})=> {
